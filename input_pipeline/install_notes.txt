@@ -1,0 +1,27 @@
+# Stanford CoreNLP
+wget http://nlp.stanford.edu/software/stanford-corenlp-full-2014-06-16.zip
+unzip stanford-corenlp-full-2014-06-16.zip 
+mv stanford-corenlp-full-2014-06-16.zip stanford-corenlp.zip
+
+unzip nltk_data.zip
+
+## Mongodb setup
+brew install mongodb
+mkdir db
+mongod --dbpath db
+
+## Pipeline install (virtualenv recommended)
+pip install -r osx_req.txt
+
+## Single pass of the pipeline
+*With running mongodb*
+cd scraper
+python scraper.py
+cd ../stanford_pipeline
+python process.py
+cd phoenix_pipeline
+python pipeline.py
+
+https://github.com/nltk/nltk/issues/824 TLDR: pip install setuptools==9.1
+nltk data moved: https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/packages/tokenizers/punkt.zip
+

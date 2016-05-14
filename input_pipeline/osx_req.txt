@@ -1,0 +1,30 @@
+APScheduler==3.0.2
+BeautifulSoup==3.2.1
+corenlp-python==3.2.0.post3
+cssselect==0.9.1
+docutils==0.11
+futures==2.2.0
+goose-extractor==1.0.8
+jieba==0.32
+Jinja2==2.7.2
+jusText==2.1.0
+lxml==3.3.0
+MarkupSafe==0.23
+nltk==2.0.4
+numpydoc==0.4
+Pattern==2.6
+-e git+https://github.com/openeventdata/petrarch.git@5fe92b676e8b4fb9a1964e7da55e9c95e9a5745f#egg=petrarch
+pexpect==3.2
+Pillow==2.3.0
+Pygments==1.6
+pymongo==2.6.3
+python-dateutil==2.2
+pytz==2015.2
+PyYAML==3.10
+requests==2.2.1
+six==1.6.1
+Sphinx==1.2.2
+-e git+https://github.com/johnb30/stanford_corenlp_pywrapper.git@f7196a585087f4b9f05b63cdb77f790af9750261#egg=stanford_corenlp_pywrapper
+tzlocal==1.1.3
+Unidecode==0.4.16
+xmltodict==0.9.0
