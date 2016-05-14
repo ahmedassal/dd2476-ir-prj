@@ -1,5 +1,11 @@
-## Mongodb setup
+# Stanford CoreNLP
+wget http://nlp.stanford.edu/software/stanford-corenlp-full-2014-06-16.zip
+unzip stanford-corenlp-full-2014-06-16.zip 
+mv stanford-corenlp-full-2014-06-16.zip stanford-corenlp.zip
 
+unzip nltk_data.zip
+
+## Mongodb setup
 brew install mongodb
 mkdir db
 mongod --dbpath db
