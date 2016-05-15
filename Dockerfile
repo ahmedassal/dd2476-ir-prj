@@ -7,17 +7,22 @@
 FROM codenvy/shellinabox
 USER root
 #RUN ls
+RUN apt-get update  >/dev/null 2>&1
+RUN apt-get install -y bzip2 >/dev/null 2>&1
+RUN apt-get install -y git >/dev/null 2>&1
 RUN mkdir -p /home/user/dd2476-ir-prj2/
-ADD . /home/user/dd2476-ir-prj2/
+#RUN git clone https://github.com/ahmedassal/dd2476-ir-prj.git
 WORKDIR /home/user/dd2476-ir-prj2/
-RUN unzip dd2476-ir-prj2.zip >/dev/null 2>&1
+ADD . /home/user/dd2476-ir-prj2/
+RUN unzip -o dd2476-ir-prj2.zip >/dev/null 2>&1
+
 WORKDIR /home/user/dd2476-ir-prj2/input_pipeline
 RUN wget http://nlp.stanford.edu/software/stanford-corenlp-full-2014-06-16.zip >/dev/null 2>&1
-RUN unzip stanford-corenlp-full-2014-06-16.zip  >/dev/null 2>&1
+RUN unzip -o stanford-corenlp-full-2014-06-16.zip  >/dev/null 2>&1
 RUN mv stanford-corenlp-full-2014-06-16.zip stanford-corenlp.zip
 RUN unzip nltk_data.zip >/dev/null 2>&1
+RUN ls -arlth
 
-RUN sudo apt-get install bzip2 >/dev/null 2>&1
 RUN sudo wget http://repo.continuum.io/archive/Anaconda3-4.0.0-Linux-x86_64.sh >/dev/null 2>&1
 RUN sudo bash Anaconda3-4.0.0-Linux-x86_64.sh -b -p $HOME/anaconda >/dev/null 2>&1
 ENV PATH $HOME/anaconda/bin:$PATH
@@ -30,9 +35,9 @@ RUN $HOME/anaconda/bin/conda create --name irprj2_7 python=2.7 Anaconda matplotl
 ##RUN $HOME/anaconda/bin/activate irprj2.7
 ##CMD ["bash", "--rcfile", "$HOME/anaconda/bin"]
 ##RUN . ~/anaconda/bin/activate irprj2.7
-##RUN /bin/bash -c "source ~/anaconda/bin/activate irprj2_7"
-RUN /bin/bash -c "source activate irprj2_7"
-#RUN source activate irprj2_7
+RUN /bin/bash -c "source ~/anaconda/bin/activate irprj2_7"
+##RUN /bin/bash -c "source activate irprj2_7"
+##RUN source activate irprj2_7
 
 
 # Codenvy uses this port to map IDE clients to the output of
